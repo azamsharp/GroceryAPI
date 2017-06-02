@@ -31,12 +31,7 @@ class PostgreSQLService {
             return shoppingLists
         }
         
-        for node in nodeArray {
-            
-            let shoppingList = ShoppingList(node: node)
-            shoppingLists.append(shoppingList)
-        }
-        
+        shoppingLists = nodeArray.flatMap(ShoppingList.init)
         return shoppingLists
     }
     
